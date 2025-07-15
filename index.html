@@ -104,21 +104,25 @@
 
     <!-- Task 1 -->
     <h2>Task 1</h2>
-    <div class="question">
-      [Paste your IELTS Task 1 chart or description here]
+   <div class="question">
+  <p> The table below gives information about the amount of tax collected (as % of GDP) in five countries for 4 years between 1975 and 2005.</p>
+  <img src="photo_2025-07-15_20-33-33.jpg" alt="Computer Ownership Chart" style="max-width:100%; border: 1px solid #ccc; border-radius: 8px; margin-top: 10px;">
+</div>
+
+    <textarea name="task1" id="task1Input" placeholder="Write your Task 1 answer here..." required></textarea>
+    <div class="meta">
+      <span id="wordCountTask1">Word Count (Task 1): 0</span>
     </div>
-    <textarea name="task1" placeholder="Write your Task 1 answer here..." required></textarea>
 
     <!-- Task 2 -->
     <h2>Task 2</h2>
     <div class="question">
-      New technologies have changed the way children spend their free time.<br>
+      In some parts of the world, many famous people are regarded as ‘role models’ and  they are having an increasing influence on the young.<br>
       Do you think the advantages of this trend outweigh the disadvantages?
     </div>
-    <textarea name="task2" id="essayInput" spellcheck="false" autocomplete="off" placeholder="Write your Task 2 essay here..." required></textarea>
-
+    <textarea name="task2" id="task2Input" spellcheck="false" autocomplete="off" placeholder="Write your Task 2 essay here..." required></textarea>
     <div class="meta">
-      <span id="wordCount">Word Count (Task 2): 0</span>
+      <span id="wordCountTask2">Word Count (Task 2): 0</span>
     </div>
 
     <input type="hidden" name="_subject" value="New IELTS Writing Submission">
@@ -130,13 +134,19 @@
 </div>
 
 <script>
-  // Word Counter for Task 2
-  const essayInput = document.getElementById('essayInput');
-  const wordCountDisplay = document.getElementById('wordCount');
+  const task1Input = document.getElementById('task1Input');
+  const task2Input = document.getElementById('task2Input');
+  const wordCountDisplay1 = document.getElementById('wordCountTask1');
+  const wordCountDisplay2 = document.getElementById('wordCountTask2');
 
-  essayInput.addEventListener('input', () => {
-    const words = essayInput.value.trim().split(/\s+/).filter(w => w.length > 0);
-    wordCountDisplay.textContent = `Word Count (Task 2): ${words.length}`;
+  task1Input.addEventListener('input', () => {
+    const words = task1Input.value.trim().split(/\s+/).filter(w => w.length > 0);
+    wordCountDisplay1.textContent = `Word Count (Task 1): ${words.length}`;
+  });
+
+  task2Input.addEventListener('input', () => {
+    const words = task2Input.value.trim().split(/\s+/).filter(w => w.length > 0);
+    wordCountDisplay2.textContent = `Word Count (Task 2): ${words.length}`;
   });
 
   // Countdown Timer (1 hour = 3600 seconds)
