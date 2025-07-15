@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IELTS Writing Task 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      background: #eef2ff;
+      padding: 15px;
+      border-left: 5px solid #4f46e5;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 15px;
+      font-size: 16px;
+      resize: vertical;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4f46e5;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4338ca;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>IELTS Writing Task 2</h1>
+  <div class="question">
+    New technologies have changed the way children spend their free time.<br>
+    Do you think the advantages of this trend outweigh the disadvantages?
+  </div>
+
+  <textarea id="essayInput" spellcheck="false" autocomplete="off" placeholder="Write your essay here..."></textarea>
+
+  <div class="meta">
+    <span id="wordCount">Word Count: 0</span>
+    <span id="timer">Time: 00:00</span>
+  </div>
+
+  <button onclick="submitEssay()">Submit</button>
+</div>
+
+<script>
+  const input = document.getElementById('essayInput');
+  const wordCountDisplay = document.getElementById('wordCount');
+  const timerDisplay = document.getElementById('timer');
+
+  input.addEventListener('input', () => {
+    const words = input.value.trim().split(/\s+/).filter(w => w.length > 0);
+    wordCountDisplay.textContent = `Word Count: ${words.length}`;
+  });
+
+  function submitEssay() {
+    alert("Your essay has been recorded (not saved in this demo).");
+  }
+
+  // Timer
+  let seconds = 0;
+  setInterval(() => {
+    seconds++;
+    const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+    const secs = String(seconds % 60).padStart(2, '0');
+    timerDisplay.textContent = `Time: ${mins}:${secs}`;
+  }, 1000);
+</script>
+
+</body>
+</html>
